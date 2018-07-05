@@ -1,0 +1,655 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <style>
+    
+
+body {
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+  font-size:90%;
+  color: black;
+}
+
+p {
+  margin: 0.5em;
+}
+
+pre code {
+  font-family: "Monaco";
+  font-size: 100%;
+}
+
+img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin:10px;
+}
+
+h1, h2, h3 {
+  border-bottom:thin solid black;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+}
+
+h1 {
+  font-style:italic;
+  font-size:130%;
+}
+
+h2 {
+  font-size:110%;
+}
+
+h3 {
+  font-size:100%;
+}
+
+
+
+  </style>
+
+  <body class="lab">
+
+    
+  <div class="uk-offcanvas-content">
+    <div id="offcanvas-usage" uk-offcanvas>
+      <div class="uk-offcanvas-bar">
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+        <ul class="uk-nav">
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns//topic01-context/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-01
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns//topic02-template-method-strategy/book-template-method-strategy/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-02
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns//topic03-command/book-a-command/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-03
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns//topic04-prototype/book-a-prototype/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+lab-04
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns//topic05-gof-patterns/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-05
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns//topic06-adapter-singleton-memento/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-06
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns//topic07-enterprise-patterns-1/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-07
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns//topic08-architecture/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-08
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns//topic09-enterprise-patterns-2/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-09
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns//topic10-half-sync/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-10
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns//topic11-microservices/book-a/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-11-A
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns//topic11-microservices/book-b/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-11-B
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns//topic12-xtend/book-a/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-12-A
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns//topic12-xtend/book-b/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-12-B
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns//topic12-xtend/book-c/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-12-C
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns//topic13-swift/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+SwiftToDoLab
+                </a>
+              </li>
+            
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+    <div uk-sticky>
+      <nav class="uk-navbar">
+        <div class="uk-navbar-left">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
+                   uk-tooltip></a></li>
+            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
+                                     pos="bottom" uk-tooltip>Adapter, Singleton, Memento  </a></li>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
+              uk-switcher="connect: .switcher-container">
+            
+              <li><a href="#">Lab-06</a></li>
+            
+              <li><a href="#">01</a></li>
+            
+              <li><a href="#">02</a></li>
+            
+              <li><a href="#">03</a></li>
+            
+              <li><a href="#">04</a></li>
+            
+              <li><a href="#">05</a></li>
+            
+              <li><a href="#">06</a></li>
+            
+              <li><a href="#">Exercises</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="uk-container uk-container-expand">
+      <ul class="uk-switcher switcher-container">
+        
+          <li> <h1>Objectives</h1>
+<p>Extend the pacemaker-android app to enable activities to be listed. Explore three patterns in this context: memento, singleton, adapter</p>
+</li>
+        
+          <li> <h1>Setup</h1>
+<p>This is v1 of the pacemaker-android project from the last lab:</p>
+<ul>
+<li><a href="./archives/pacemaker-android-v1.zip">pacemaker-android-v1.zip</a></li>
+</ul>
+<p>You can import this for reference purposes, or keep working with your own version.</p>
+</li>
+        
+          <li> <h1>Memento I</h1>
+<p>Currently, your createActitivyButtonPressed method in the CreateActivity class looks like this:</p>
+<pre><code class="lang-java">  public void createActivityButtonPressed (View view) 
+  {  
+    double distance = distancePicker.getValue();
+    Activity activity = new Activity (activityType.getText().toString(), activityLocation.getText().toString(), distance);
+
+    activities.add(activity);
+    Log.v(&quot;Pacemaker&quot;, &quot;CreateActivity Button Pressed with &quot; + distance);
+  }</code></pre>
+<p>We are creating an activity, and adding it to a list held locally. If the user would like to see the activities, this handler will switch views:</p>
+<pre><code class="lang-java">  public void listActivityButtonPressed (View view) 
+  {
+    Log.v(&quot;Pacemaker&quot;, &quot;List Activityies Button Pressed&quot;);
+    Intent intent = new Intent(this, ActivitiesList.class);
+    startActivity (intent);
+  }</code></pre>
+<p>However, the activity is not able to access the list we have been updating with new activities.</p>
+<p>This is the current Activity class:</p>
+<pre><code class="lang-java">public class Activity 
+{ 
+  public Long   id;
+  public String type;
+  public String location;
+  public double distance;
+
+  public Activity()
+  {
+  }
+
+  public Activity(String type, String location, double distance)
+  {
+    this.type      = type;
+    this.location  = location;
+    this.distance  = distance;
+  }
+
+  @Override
+  public String toString()
+  {
+    return toStringHelper(this).addValue(id)
+                               .addValue(type)
+                               .addValue(location)
+                               .addValue(distance)
+                               .toString();
+  }
+
+  @Override
+  public boolean equals(final Object obj)
+  {
+    if (obj instanceof Activity)
+    {
+      final Activity other = (Activity) obj;
+      return Objects.equal(type, other.type) 
+          &amp;&amp; Objects.equal(location,  other.location)
+          &amp;&amp; Objects.equal(distance,  other.distance);    
+    }
+    else
+    {
+      return false;
+    }
+  }
+
+  @Override  
+  public int hashCode()  
+  {  
+     return Objects.hashCode(this.id, this.type, this.location, this.distance);  
+  }
+}</code></pre>
+<p>Augment this class with the following features (as members of the class):</p>
+<pre><code class="lang-java">  public Activity(Parcel in)
+  {
+    this.type = in.readString();
+    this.location = in.readString();
+    this.distance = in.readDouble();
+  }
+
+  @Override
+  public int describeContents()
+  {
+    return 0;
+  }
+
+  @Override
+  public void writeToParcel(Parcel dest, int flags)
+  {
+    dest.writeString(type);
+    dest.writeString(location);
+    dest.writeDouble(distance);
+  }
+
+  public static final Parcelable.Creator&lt;Activity&gt; CREATOR = new Parcelable.Creator&lt;Activity&gt;()
+  {
+    public Activity createFromParcel(Parcel in)
+    {
+      return new Activity(in);
+    }
+
+    public Activity[] newArray(int size)
+    {
+      return new Activity[size];
+    }
+  };</code></pre>
+<p>This will enable instances of the class to be &#39;parcelabe&#39; - i.e. externalized to an external to another object.</p>
+<p>We can transfer such a &#39;parcel&#39; to another activity by adding it to a &#39;bundle&#39; for that activity, and adding it as an &#39;extra&#39; for the activity to pick up:</p>
+<pre><code class="lang-java">  public void listActivityButtonPressed (View view) 
+  {
+    Log.v(&quot;Pacemaker&quot;, &quot;List Activityies Button Pressed&quot;);
+    Intent intent = new Intent(this, ActivitiesList.class);
+    Bundle bundle = new Bundle();
+    bundle.putParcelableArrayList(&quot;activities&quot;, activities);
+    intent.putExtras(bundle);
+    startActivity (intent);
+  }</code></pre>
+</li>
+        
+          <li> <h1>Memento II</h1>
+<p>In the ActivitiesList class, we can recover the list from the bundle. This can be done in onCreate:</p>
+<pre><code class="lang-java">    Bundle extras = getIntent().getExtras();  
+    List&lt;Activity&gt; activities  = extras.getParcelableArrayList(&quot;activities&quot;);</code></pre>
+<p>We might display the activity list to the log:</p>
+<pre><code>    for (Activity activity : activities)
+    {
+      Log.v(&quot;Pacemaker&quot;, &quot;Activity: &quot; + activity);
+    }</code></pre>
+<p>We would expect this to use the toString helper we have provided to Activity model:</p>
+<pre><code class="lang-java">  @Override
+  public String toString()
+  {
+    return toStringHelper(this).addValue(type).addValue(location).addValue(distance).toString();
+  }</code></pre>
+</li>
+        
+          <li> <h1>Adapter I</h1>
+<p>Just sending the list to the log will not suffice. We should attempt to render them to the list view directly.</p>
+<p>Make sure we have the activitiesListView to hand:</p>
+<pre><code class="lang-java">public class ActivitiesList extends  android.app.Activity
+{
+  private ListView activitiesListView;
+
+  @Override
+  protected void onCreate(Bundle savedInstanceState)
+  {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activities_list);
+
+    activitiesListView = (ListView) findViewById(R.id.activitiesListView);
+
+    Bundle extras = getIntent().getExtras();  
+    List&lt;Activity&gt; activities  = extras.getParcelableArrayList(&quot;activities&quot;);
+    ..
+
+}</code></pre>
+<p>The simplest way of rendering to this list view is to use an off-the-shelf adapter:</p>
+<pre><code class="lang-java">    ArrayAdapter &lt;Activity&gt;activitiesAdapter = new ArrayAdapter&lt;Activity&gt;(this, android.R.layout.simple_list_item_1, activities);
+    activitiesListView.setAdapter(activitiesAdapter);
+    activitiesAdapter.notifyDataSetChanged();</code></pre>
+<p>This should display the items as expected. However, they will be still formatted using the toString formatter. Also, is is using &#39;simple_list_item_1&#39; layout - explained here:</p>
+<ul>
+<li><a href="http://stackoverflow.com/questions/3663745/what-is-android-r-layout-simple-list-item-1">http://stackoverflow.com/questions/3663745/what-is-android-r-layout-simple-list-item-1</a></li>
+</ul>
+</li>
+        
+          <li> <h1>Singleton</h1>
+<p>We can introduce an <code>Application</code> object, guaranteed to be a singleton - and accessible to all activities in our application.</p>
+<ul>
+<li><a href="http://developer.android.com/reference/android/app/Application.html">http://developer.android.com/reference/android/app/Application.html</a></li>
+</ul>
+<p>Create a new package called &#39;org.pacemaker.main&#39; - and introduce this class:</p>
+<pre><code class="lang-java">package org.pacemaker.main;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.pacemaker.models.Activity;
+
+import android.app.Application;
+import android.util.Log;
+
+public class PacemakerApp extends Application
+{
+  public List&lt;Activity&gt; actvities = new ArrayList&lt;Activity&gt;();
+
+  @Override
+  public void onCreate()
+  {
+    super.onCreate();
+    Log.v(&quot;Pacemaker&quot;, &quot;Pacemaker App Started&quot;);
+  }
+}</code></pre>
+<p>If an application object is to be created, it must be specified in the manifest <code>AndroidManifst.xml</code></p>
+<pre><code class="lang-xml">   &lt;application
+        android:name=&quot;org.pacemaker.main.PacemakerApp&quot;</code></pre>
+<p>Run the app now and make sure the log message appears (once only)</p>
+<p>CreateActivity can now reach for this object when it is created:</p>
+<pre><code class="lang-java">public class CreateActivity extends android.app.Activity
+{
+  private PacemakerApp   app;
+
+  @Override
+  protected void onCreate(Bundle savedInstanceState)
+  {
+    //...
+
+    app = (PacemakerApp) getApplication()
+    //...  
+  }</code></pre>
+<p>.. and we can simplify cresteActivityButton pressed, removing the parcelable mechanism, and simply adding the activity to the list in the application object:</p>
+<pre><code class="lang-java">  public void createActivityButtonPressed (View view) 
+  {  
+    double distance = distancePicker.getValue();
+    Activity activity = new Activity (activityType.getText().toString(), activityLocation.getText().toString(), distance);
+
+    app.actvities.add(activity);
+  }</code></pre>
+<p>ActivitiesList can also be simplified, we just retrieve the application object and the list of activities from that:</p>
+<pre><code class="lang-java">public class ActivitiesList extends  android.app.Activity
+{
+  private PacemakerApp app;
+  private ListView     activitiesListView;
+
+  @Override
+  protected void onCreate(Bundle savedInstanceState)
+  {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activities_list);
+
+    app = (PacemakerApp) getApplication();
+
+    activitiesListView = (ListView) findViewById(R.id.activitiesListView);
+
+    List&lt;Activity&gt; activities  = app.actvities;
+
+    ArrayAdapter &lt;Activity&gt;activitiesAdapter = new ArrayAdapter&lt;Activity&gt;(this, android.R.layout.simple_list_item_1, activities);
+    activitiesListView.setAdapter(activitiesAdapter);
+    activitiesAdapter.notifyDataSetChanged();
+  }
+
+  @Override
+  public boolean onCreateOptionsMenu(Menu menu)
+  {
+    getMenuInflater().inflate(R.menu.activities_list, menu);
+    return true;
+  }
+}</code></pre>
+<p>This should now work as before. We can also remove the Parcelable methods from the Activity model as we are no longer using them.</p>
+</li>
+        
+          <li> <h1>Adapter II</h1>
+<p>The existing adapter we are using in the ActivitiesList class is a stock adapter from the SDK:</p>
+<ul>
+<li><a href="http://developer.android.com/reference/android/widget/ArrayAdapter.html">http://developer.android.com/reference/android/widget/ArrayAdapter.html</a></li>
+</ul>
+<p>We can write our own custom adapter to do the same job:</p>
+<pre><code class="lang-java">class ActivityAdapter extends ArrayAdapter&lt;Activity&gt;
+{
+  private Context        context;
+  public  List&lt;Activity&gt; activities;
+
+  public ActivityAdapter(Context context, List&lt;Activity&gt; activities)
+  {
+    super(context, android.R.layout.simple_list_item_1, activities);
+    this.context   = context;
+    this.activities = activities;
+  }
+
+  @Override
+  public View getView(int position, View convertView, ViewGroup parent)
+  {
+    LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+    View     view     = inflater.inflate(android.R.layout.simple_list_item_1, parent, false);
+    Activity activity = activities.get(position);
+    TextView textView = (TextView) view.findViewById(android.R.id.text1);
+
+    textView.setText(&quot;&quot; + activity);
+
+    return view;
+  }
+
+  @Override
+  public int getCount()
+  {
+    return activities.size();
+  }
+}</code></pre>
+<p>In the above, we have precise control over how we layout the activity data in each row. We are not using this yet, so our display is still primitive.</p>
+<p>Using this adapter in ActivitiesList.onCreate instead of the library one is straightforward :</p>
+<pre><code class="lang-java">    ActivityAdapter activitiesAdapter = new ActivityAdapter(this,  activities);
+    activitiesListView.setAdapter(activitiesAdapter);
+    activitiesAdapter.notifyDataSetChanged();</code></pre>
+<p>This should now work as expected.</p>
+</li>
+        
+          <li> <h1>Exercises</h1>
+<h2>Exercise 1:</h2>
+<p>In the last lab, you inserted a new button onto the activities view to allow navigation to the list view:</p>
+<p><img src="img/00.png" alt=""></p>
+<p>Remove this button now, and introduce a standard menu item to move between views:</p>
+<p><img src="img/01.png" alt=""></p>
+<p>Wire up this menu such that it will trigger the view as expected.</p>
+<h2>Exercise 2:</h2>
+<p>We are still using the stock simple_list_item_1 layout:</p>
+<ul>
+<li><a href="https://github.com/android/platform_frameworks_base/blob/master/core/res/res/layout/simple_list_item_1.xml">https://github.com/android/platform_frameworks_base/blob/master/core/res/res/layout/simple_list_item_1.xml</a></li>
+</ul>
+<p>Experiment with designing a new layout, which is to be loaded instead of the above layout. This one should have three text fields (instead of 1 above) and you can use these to display the type, location and distance attributes of each activity.</p>
+<p>HINT:</p>
+<p>This would be a reasonable activity_row_layout.xml:</p>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot; &gt;
+
+    &lt;TextView
+        android:id=&quot;@+id/type&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_alignParentLeft=&quot;true&quot;
+        android:layout_alignParentTop=&quot;true&quot;
+        android:layout_marginLeft=&quot;30dp&quot;
+        android:layout_marginTop=&quot;27dp&quot;
+        android:text=&quot;&quot; /&gt;
+
+    &lt;TextView
+        android:id=&quot;@+id/distance&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_alignBaseline=&quot;@+id/type&quot;
+        android:layout_alignBottom=&quot;@+id/type&quot;
+        android:layout_alignParentRight=&quot;true&quot;
+        android:layout_marginRight=&quot;40dp&quot;
+        android:text=&quot;&quot; /&gt;
+
+    &lt;TextView
+        android:id=&quot;@+id/location&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_alignBaseline=&quot;@+id/distance&quot;
+        android:layout_alignBottom=&quot;@+id/distance&quot;
+        android:layout_centerHorizontal=&quot;true&quot;
+        android:text=&quot;&quot; /&gt;
+
+&lt;/RelativeLayout&gt;</code></pre>
+<p>Place this in the `res\layout&#39; folder - and use it instead of &#39;simple_list_item_1&#39; when initialising the adapter. You will then need to load the controls directly from the adapter. something like this:</p>
+<pre><code>    TextView type      = (TextView) view.findViewById(R.id.type);
+    TextView location  = (TextView) view.findViewById(R.id.location);
+    TextView distance  = (TextView) view.findViewById(R.id.distance);
+
+    type.setText(activity.type);
+    location.setText(activity.location);
+    distance.setText(&quot;&quot; + activity.distance);</code></pre>
+<h2>Solution:</h2>
+<p>This is version 2 of the pacemaker-android app (including solutions to the above exercises):</p>
+<ul>
+<li><a href="./archives/pacemaker-android-v2.zip">pacemaker-android-v2.zip</a></li>
+</ul>
+</li>
+        
+      </ul>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass('');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass('uk-label uk-text-lowercase');
+      divLabel.append($images[i].alt);
+      $(divLabel).insertAfter($images[i]);
+      $('<br>').insertAfter($images[i]);
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>
