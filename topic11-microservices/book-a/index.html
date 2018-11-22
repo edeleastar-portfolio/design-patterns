@@ -1,23 +1,27 @@
-
-
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-  </head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
+        type="text/css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
+        rel="stylesheet"/>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
   <style>
     
 
@@ -63,213 +67,161 @@ h3 {
 
 
   </style>
+</head>
 
-  <body class="lab">
+<body>
 
+
+
+<div class="ui fixed top pointing inverted stackable menu labmenu">
+  <header class="header item">
+    <i id="toc" class="sitemap icon"></i>
     
-  <div class="uk-offcanvas-content">
-    <div id="offcanvas-usage" uk-offcanvas>
-      <div class="uk-offcanvas-bar">
-        <button class="uk-offcanvas-close" type="button" uk-close></button>
-        <ul class="uk-nav">
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns//topic01-context/book/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-01
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns//topic02-template-method-strategy/book-template-method-strategy/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-02
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns//topic03-command/book-a-command/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-03
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns//topic04-prototype/book-a-prototype/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-lab-04
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns//topic05-gof-patterns/book/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-05
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns//topic06-adapter-singleton-memento/book/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-06
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns//topic07-enterprise-patterns-1/book/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-07
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns//topic08-architecture/book/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-08
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns//topic09-enterprise-patterns-2/book/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-09
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns//topic10-half-sync/book/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-10
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns//topic11-microservices/book-a/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-11-A
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns//topic11-microservices/book-b/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-11-B
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns//topic12-xtend/book-a/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-12-A
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns//topic12-xtend/book-b/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-12-B
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns//topic12-xtend/book-c/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-12-C
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns//topic13-swift/book/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-SwiftToDoLab
-                </a>
-              </li>
-            
-          
-        </ul>
-      </div>
-    </div>
+      <a href="../index.html"> Javascript & Microservices  </a>
+    
+  </header>
+  <div class="right tab-menu menu">
+    
+      <a class="item" data-tab="Lab-11-A">
+        Lab-11-A
+      </a>
+    
+      <a class="item" data-tab="01">
+        01
+      </a>
+    
+      <a class="item" data-tab="02">
+        02
+      </a>
+    
+      <a class="item" data-tab="03">
+        03
+      </a>
+    
+      <a class="item" data-tab="04">
+        04
+      </a>
+    
+      <a class="item" data-tab="05">
+        05
+      </a>
+    
+      <a class="item" data-tab="06">
+        06
+      </a>
+    
+      <a class="item" data-tab="07">
+        07
+      </a>
+    
+      <a class="item" data-tab="08">
+        08
+      </a>
+    
+      <a class="item" data-tab="Exercises">
+        Exercises
+      </a>
+    
   </div>
+</div>
 
-
-    <div uk-sticky>
-      <nav class="uk-navbar">
-        <div class="uk-navbar-left">
-          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
-            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
-                   uk-tooltip></a></li>
-            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
-                                     pos="bottom" uk-tooltip>Javascript & Microservices </a></li>
-          </ul>
-        </div>
-        <div class="uk-navbar-right">
-          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
-              uk-switcher="connect: .switcher-container">
-            
-              <li><a href="#">Lab-11-A</a></li>
-            
-              <li><a href="#">01</a></li>
-            
-              <li><a href="#">02</a></li>
-            
-              <li><a href="#">03</a></li>
-            
-              <li><a href="#">04</a></li>
-            
-              <li><a href="#">05</a></li>
-            
-              <li><a href="#">06</a></li>
-            
-              <li><a href="#">07</a></li>
-            
-              <li><a href="#">08</a></li>
-            
-              <li><a href="#">Exercises</a></li>
-            
-          </ul>
-        </div>
-      </nav>
-    </div>
-
-    <div class="uk-container uk-container-expand">
-      <ul class="uk-switcher switcher-container">
-        
-          <li> <h1>Objectives</h1>
+<div class="ui pushable">
+  <div class="ui inverted labeled icon left inline vertical sidebar menu">
+    <br><br>
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/design-patterns//topic01-context/book/index.html">Lab-01 </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/design-patterns//topic02-template-method-strategy/book-template-method-strategy/index.html">Lab-02 </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/design-patterns//topic03-command/book-a-command/index.html">Lab-03 </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/design-patterns//topic04-prototype/book-a-prototype/index.html">lab-04 </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/design-patterns//topic05-gof-patterns/book/index.html">Lab-05 </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/design-patterns//topic06-adapter-singleton-memento/book/index.html">Lab-06 </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/design-patterns//topic07-enterprise-patterns-1/book/index.html">Lab-07 </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/design-patterns//topic08-architecture/book/index.html">Lab-08 </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/design-patterns//topic09-enterprise-patterns-2/book/index.html">Lab-09 </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/design-patterns//topic10-half-sync/book/index.html">Lab-10 </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/design-patterns//topic11-microservices/book-a/index.html">Lab-11-A </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/design-patterns//topic11-microservices/book-b/index.html">Lab-11-B </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/design-patterns//topic12-xtend/book-a/index.html">Lab-12-A </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/design-patterns//topic12-xtend/book-b/index.html">Lab-12-B </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/design-patterns//topic12-xtend/book-c/index.html">Lab-12-C </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/design-patterns//topic13-swift/book/index.html">SwiftToDoLab </a>
+      
+    
+  </div>
+  <div class="pusher" tabindex="-1">
+    <div class="ui basic segment">
+      <br>
+      
+        <div class="ui tab segment lab" data-tab="Lab-11-A">
+          <h1>Objectives</h1>
 <p>Build a version of the pacemaker-service API in node.js. Install a version of the node application in Docker. Run this docker module in a vagrant managed VM</p>
-</li>
-        
-          <li> <h1>Setup</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="01">
+          <h1>Setup</h1>
 <p>Install the latest version of node.js:</p>
 <ul>
 <li><a href="http://nodejs.org/download">http://nodejs.org/download</a></li>
@@ -322,9 +274,11 @@ About to write to /Users/edeleastar/repos/modules/active/patterns/prj/pacemaker-
 
 Is this ok? (yes) yes</code></pre>
 <p>(You  may not have a git repository in your example).</p>
-</li>
-        
-          <li> <h1>Modules</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="02">
+          <h1>Modules</h1>
 <p>We will need 4 node modules to fulfill the role of the frameworks and libraries in the play application. These are:</p>
 <h2>Sequelize</h2>
 <p>A node compatible ORM library:</p>
@@ -385,9 +339,11 @@ npm install body-parser --save</code></pre>
 │   ├── express ...
 │   ├── sequelize ...
 │   └── sqlite3 ...</code></pre>
-</li>
-        
-          <li> <h1>Model</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="03">
+          <h1>Model</h1>
 <p>In the pacemaker-node folder, create another folder called &#39;models&#39;, which will contain an analog of the models we created in the play-service application.</p>
 <p>Incorporate the following two javascript files:</p>
 <h2>users.js</h2>
@@ -565,9 +521,11 @@ module.exports = [
     password: &#39;secret&#39;
   }
 ]</code></pre>
-</li>
-        
-          <li> <h1>Controllers</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="04">
+          <h1>Controllers</h1>
 <p>Create a folder called &#39;controllers&#39;, and introduce these files:</p>
 <h2>users.js</h2>
 <pre><code class="lang-javascript">var router = require(&#39;express&#39;).Router();
@@ -675,9 +633,11 @@ router.delete(&#39;/:activityId&#39;, function(req, res) {
 });
 
 module.exports = router;</code></pre>
-</li>
-        
-          <li> <h1>Application</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="05">
+          <h1>Application</h1>
 <p>In the project folder - pacemaker-node - introduce the main application program:</p>
 <h2>app.js</h2>
 <pre><code>var express = require(&#39;express&#39;);
@@ -758,9 +718,11 @@ console.log (&quot;pacemaker-node app is listening on port 8080&quot;);</code></
 │   ├── sequelize ...
 │   └── sqlite3 ...
 ├── package.json</code></pre>
-</li>
-        
-          <li> <h1>Test the API</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="06">
+          <h1>Test the API</h1>
 <p>The app can be launched now:</p>
 <pre><code>$ node app.js</code></pre>
 <p>Which should display some initialisation activity:</p>
@@ -820,9 +782,11 @@ Executing (default): INSERT INTO `users` (`id`,`email`,`firstName`,`lastName`,`p
 <p>(the node app is listenting on 8080).</p>
 <p>Log in as &#39;homer@simpson.com&#39;, &#39;secret&#39;.</p>
 <p>All features of the pacemaker-android should work as expected, including creating and listing activities.</p>
-</li>
-        
-          <li> <h1>Vagrant</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="07">
+          <h1>Vagrant</h1>
 <p>Install virtual box on your system:</p>
 <ul>
 <li><a href="https://www.virtualbox.org/">https://www.virtualbox.org/</a></li>
@@ -883,9 +847,11 @@ vagrant@precise64:~$</code></pre>
 <pre><code>logout
 Connection to 127.0.0.1 closed.
 localhost:pacemaker-node $</code></pre>
-</li>
-        
-          <li> <h1>Docker</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="08">
+          <h1>Docker</h1>
 <p>Also in the pacemaker-node folder, create the following file:</p>
 <h2>Dockerfile</h2>
 <pre><code># DOCKER-VERSION 0.3.4
@@ -1633,9 +1599,11 @@ Removing intermediate container 86013f6bd068
 Removing intermediate container abad5fb8dfa7
 Removing intermediate container 5996ad8e0d7f
 Removing intermediate container 58d8cee2b357</code></pre>
-</li>
-        
-          <li> <h1>Exercises</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="Exercises">
+          <h1>Exercises</h1>
 <p>This is an archive of the pacemaker-node application so far:</p>
 <ul>
 <li><a href="archives/pacemaker-node.zip">pacemaker-node</a></li>
@@ -1659,26 +1627,67 @@ Removing intermediate container 58d8cee2b357</code></pre>
 <li><a href="https://www.digitalocean.com/features/one-click-apps">https://www.digitalocean.com/features/one-click-apps</a></li>
 </ul>
 <p>Try to deploy pacemaker-node to this service.</p>
-</li>
-        
-      </ul>
-    </div>
 
-    <script>
-      $(document).ready(function() {
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).on('keydown', function(e) {
+  e = e || window.event;
+  var nextTab;
+  switch (e.which || e.keyCode) {
+    case 37: // left
+      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+
+    case 39: // right
+      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+  }
+});
+
+  $(document).ready(function() {
+  $('img').addClass('ui image');
+
+  $('.ui.embed').embed();
+
   const $images = $('.lab img');
   jQuery.each($images, function(i) {
     if ($images[i].alt.length > 0) {
-      const divImg = $(document.createElement('div')).addClass('');
+      const divImg = $(document.createElement('div')).addClass(
+        'ui basic segment',
+      );
       $($images[i]).wrap(divImg);
-      const divLabel = $(document.createElement('div')).addClass('uk-label uk-text-lowercase');
+      const divLabel = $(document.createElement('div')).addClass(
+        'ui blue ribbon label',
+      );
       divLabel.append($images[i].alt);
-      $(divLabel).insertAfter($images[i]);
-      $('<br>').insertAfter($images[i]);
+      $(divLabel).insertBefore($images[i]);
     }
   });
+
+  $('.ui.menu .item').tab({
+    history: true,
+    historyType: 'hash',
+  });
+
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+    .sidebar({ context: $('.pushable') })
+    .sidebar('setting', 'transition', 'slide out')
+    .sidebar('attach events', '#toc');
 });
 
-    </script>
-  </body>
+</script>
+</body>
 </html>
