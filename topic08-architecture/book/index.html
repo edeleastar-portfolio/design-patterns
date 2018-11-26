@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
-        type="text/css">
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
-        rel="stylesheet"/>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-  <style>
-    
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
+          type="text/css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
+          rel="stylesheet"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+      
 
 body {
   font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
@@ -66,172 +66,200 @@ h3 {
 
 
 
-  </style>
-</head>
+      
 
-<body>
+html, body {
+  height: 100%;
+  margin: 0;
+}
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.footer {
+  background: white;
+  text-align: right;
+}
+.content {
+  flex: 1;
+  overflow: auto;
+}
 
 
 
-<div class="ui fixed top pointing inverted stackable menu labmenu">
-  <header class="header item">
-    <i id="toc" class="sitemap icon"></i>
-    
-      <a href="../index.html"> Architecture  </a>
-    
-  </header>
-  <div class="right tab-menu menu">
-    
-      <a class="item" data-tab="Lab-08">
-        Lab-08
-      </a>
-    
-      <a class="item" data-tab="01">
-        01
-      </a>
-    
-      <a class="item" data-tab="02">
-        02
-      </a>
-    
-      <a class="item" data-tab="03">
-        03
-      </a>
-    
-      <a class="item" data-tab="04">
-        04
-      </a>
-    
-      <a class="item" data-tab="05">
-        05
-      </a>
-    
-      <a class="item" data-tab="06">
-        06
-      </a>
-    
-      <a class="item" data-tab="07">
-        07
-      </a>
-    
-      <a class="item" data-tab="08">
-        08
-      </a>
-    
-      <a class="item" data-tab="Exercises">
-        Exercises
-      </a>
-    
+    </style>
+  </head>
+
+  <body class="uk-background-muted">
+    <div class="wrapper">
+      <div class="content">
+        <div style="height:1000px;">
+          
+  
+
+  <div class="ui fixed top pointing inverted stackable menu labmenu">
+    <header class="header item">
+      <i id="toc" class="sitemap icon"></i>
+      
+        <a href="../index.html"> Architecture  </a>
+      
+    </header>
+    <div class="right tab-menu menu">
+      
+        <a class="item" data-tab="Lab-08">
+          Lab-08
+        </a>
+      
+        <a class="item" data-tab="01">
+          01
+        </a>
+      
+        <a class="item" data-tab="02">
+          02
+        </a>
+      
+        <a class="item" data-tab="03">
+          03
+        </a>
+      
+        <a class="item" data-tab="04">
+          04
+        </a>
+      
+        <a class="item" data-tab="05">
+          05
+        </a>
+      
+        <a class="item" data-tab="06">
+          06
+        </a>
+      
+        <a class="item" data-tab="07">
+          07
+        </a>
+      
+        <a class="item" data-tab="08">
+          08
+        </a>
+      
+        <a class="item" data-tab="Exercises">
+          Exercises
+        </a>
+      
+    </div>
   </div>
-</div>
 
-<div class="ui pushable">
-  <div class="ui inverted labeled icon left inline vertical sidebar menu">
-    <br><br>
-    
+
+  
+
+  <div class="ui pushable">
+    <div class="ui inverted labeled icon left inline vertical sidebar menu">
+      <br><br>
       
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic01-context/book/index.html">Lab-01 </a>
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic01-context/book/index.html">Lab-01 </a>
+        
       
-    
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic02-template-method-strategy/book-template-method-strategy/index.html">Lab-02 </a>
+        
       
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic02-template-method-strategy/book-template-method-strategy/index.html">Lab-02 </a>
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic03-command/book-a-command/index.html">Lab-03 </a>
+        
       
-    
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic04-prototype/book-a-prototype/index.html">lab-04 </a>
+        
       
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic03-command/book-a-command/index.html">Lab-03 </a>
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic05-gof-patterns/book/index.html">Lab-05 </a>
+        
       
-    
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic06-adapter-singleton-memento/book/index.html">Lab-06 </a>
+        
       
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic04-prototype/book-a-prototype/index.html">lab-04 </a>
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic07-enterprise-patterns-1/book/index.html">Lab-07 </a>
+        
       
-    
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic08-architecture/book/index.html">Lab-08 </a>
+        
       
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic05-gof-patterns/book/index.html">Lab-05 </a>
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic09-enterprise-patterns-2/book/index.html">Lab-09 </a>
+        
       
-    
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic10-half-sync/book/index.html">Lab-10 </a>
+        
       
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic06-adapter-singleton-memento/book/index.html">Lab-06 </a>
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic11-microservices/book-a/index.html">Lab-11-A </a>
+        
       
-    
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic11-microservices/book-b/index.html">Lab-11-B </a>
+        
       
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic07-enterprise-patterns-1/book/index.html">Lab-07 </a>
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic12-xtend/book-a/index.html">Lab-12-A </a>
+        
       
-    
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic12-xtend/book-b/index.html">Lab-12-B </a>
+        
       
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic08-architecture/book/index.html">Lab-08 </a>
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic12-xtend/book-c/index.html">Lab-12-C </a>
+        
       
-    
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic13-swift/book/index.html">SwiftToDoLab </a>
+        
       
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic09-enterprise-patterns-2/book/index.html">Lab-09 </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic10-half-sync/book/index.html">Lab-10 </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic11-microservices/book-a/index.html">Lab-11-A </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic11-microservices/book-b/index.html">Lab-11-B </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic12-xtend/book-a/index.html">Lab-12-A </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic12-xtend/book-b/index.html">Lab-12-B </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic12-xtend/book-c/index.html">Lab-12-C </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic13-swift/book/index.html">SwiftToDoLab </a>
-      
-    
-  </div>
-  <div class="pusher" tabindex="-1">
-    <div class="ui basic segment">
-      <br>
-      
-        <div class="ui tab segment lab" data-tab="Lab-08">
-          <h1>Objectives</h1>
+    </div>
+    <div class="pusher" tabindex="-1">
+      <div class="ui basic segment">
+        <br>
+        
+          <div class="ui tab segment lab" data-tab="Lab-08">
+            <h1>Objectives</h1>
 <p>Build a set of views to support signup/login and navigation, Incorporate suitable models. Explore how flow-synchronisation works in this context.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="01">
-          <h1>Setup</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="01">
+            <h1>Setup</h1>
 <p>This is v2 of the pacemaker-android project from the last android lab:</p>
 <ul>
 <li><a href="./archives/pacemaker-android-v2.zip">pacemaker-android-v2.zip</a></li>
 </ul>
 <p>You can import this for reference purposes, or keep working with your own version.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="02">
-          <h1>Welcome View</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="02">
+            <h1>Welcome View</h1>
 <p>Design a new activity to look like this:</p>
 <p><img src="img/00.png" alt=""></p>
 <p>You may end up with new entries in the strings.xml file:</p>
@@ -269,10 +297,10 @@ h3 {
 
 &lt;/RelativeLayout&gt;</code></pre>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="03">
-          <h1>Signup View</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="03">
+            <h1>Signup View</h1>
 <p>Design a new activity to look like this:</p>
 <p><img src="img/01.png" alt=""></p>
 <p>You may end up with new entries in the strings.xml file:</p>
@@ -380,10 +408,10 @@ h3 {
 
 &lt;/RelativeLayout&gt;</code></pre>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="04">
-          <h1>Login View</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="04">
+            <h1>Login View</h1>
 <p>Design a new activity to look like this:</p>
 <p><img src="img/02.png" alt=""></p>
 <p>You may end up with new entries in the strings.xml file:</p>
@@ -464,10 +492,10 @@ h3 {
 
 &lt;/RelativeLayout&gt;</code></pre>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="05">
-          <h1>Activity Classes</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="05">
+            <h1>Activity Classes</h1>
 <p>These three classes will load the views we have just created. Place them in the <code>org.pacemaker.conrollers</code> package:</p>
 <h2>Welcome.java</h2>
 <pre><code>package org.pacemaker.controllers;
@@ -566,10 +594,10 @@ public class Login extends Activity
   }
 }</code></pre>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="06">
-          <h1>Manifest</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="06">
+            <h1>Manifest</h1>
 <p>These new activities must be registered in the AndroidManifest.xml:</p>
 <pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
 &lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
@@ -618,10 +646,10 @@ public class Login extends Activity
 <p>Note that we have marked the <code>Welcome</code> activity as the on with the <code>intent-filter</code> MAIN</p>
 <p>Run the application now. You should be able to navigate from view to view.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="07">
-          <h1>Models</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="07">
+            <h1>Models</h1>
 <p>We can simplify the Activity Model class to just this version:</p>
 <pre><code class="lang-java">{
   public Long id;
@@ -701,10 +729,10 @@ public class User
   }</code></pre>
 <p>We should be able to register and log in now. And if we provide invalid credentials, we should be kept out.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="08">
-          <h1>Facade</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="08">
+            <h1>Facade</h1>
 <p>There are, of course, some serious problems with our app. The list of activities is not associated with any specific user, the user and activities themselves are not persisted.</p>
 <p>These issues could be tackled piecemeal - in each of the respective views for instance, but we might be more advised strengthen some of the abstractions around user/activity management first.</p>
 <p>This pattern here may be appropriate:</p>
@@ -823,10 +851,10 @@ activitiesAdapter.notifyDataSetChanged();</code></pre>
 ~~~</p>
 <p>This should work now as expected.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="Exercises">
-          <h1>Archive</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="Exercises">
+            <h1>Archive</h1>
 <p>..of the app so far:</p>
 <ul>
 <li><a href="./archives/pacemaker-android-v3.zip">pacemaker-android-v3.zip</a></li>
@@ -838,14 +866,16 @@ activitiesAdapter.notifyDataSetChanged();</code></pre>
 <p>There is only a single activities list - and all activities are inserted into this list. Refactor such that we are seeing the activities associated with the logged in user.</p>
 <p>As we are using a Facade, this should not require extensive changes on any of the controllers.</p>
 
-        </div>
-      
+          </div>
+        
+      </div>
     </div>
   </div>
-</div>
 
-<script>
-  $(document).on('keydown', function(e) {
+
+
+  <script>
+    $(document).on('keydown', function(e) {
   e = e || window.event;
   var nextTab;
   switch (e.which || e.keyCode) {
@@ -865,7 +895,7 @@ activitiesAdapter.notifyDataSetChanged();</code></pre>
   }
 });
 
-  $(document).ready(function() {
+    $(document).ready(function() {
   $('img').addClass('ui image');
 
   $('.ui.embed').embed();
@@ -898,6 +928,16 @@ activitiesAdapter.notifyDataSetChanged();</code></pre>
     .sidebar('attach events', '#toc');
 });
 
-</script>
-</body>
+  </script>
+
+
+        </div>
+      </div>
+      <div class="footer"> <p> Powered by <a
+          href="https://github.com/edeleastar/tutors-ts">tutors-ts.</a>
+        Unless otherwise stated, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. </p>
+      </div>
+    </div>
+  </body>
+
 </html>

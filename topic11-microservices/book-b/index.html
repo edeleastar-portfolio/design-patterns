@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
-        type="text/css">
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
-        rel="stylesheet"/>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-  <style>
-    
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
+          type="text/css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
+          rel="stylesheet"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+      
 
 body {
   font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
@@ -66,154 +66,182 @@ h3 {
 
 
 
-  </style>
-</head>
+      
 
-<body>
+html, body {
+  height: 100%;
+  margin: 0;
+}
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.footer {
+  background: white;
+  text-align: right;
+}
+.content {
+  flex: 1;
+  overflow: auto;
+}
 
 
 
-<div class="ui fixed top pointing inverted stackable menu labmenu">
-  <header class="header item">
-    <i id="toc" class="sitemap icon"></i>
-    
-      <a href="../index.html"> Javascript & Microservices  </a>
-    
-  </header>
-  <div class="right tab-menu menu">
-    
-      <a class="item" data-tab="Lab-11-B">
-        Lab-11-B
-      </a>
-    
-      <a class="item" data-tab="01">
-        01
-      </a>
-    
-      <a class="item" data-tab="02">
-        02
-      </a>
-    
-      <a class="item" data-tab="03">
-        03
-      </a>
-    
-      <a class="item" data-tab="04">
-        04
-      </a>
-    
-      <a class="item" data-tab="05">
-        05
-      </a>
-    
-      <a class="item" data-tab="06">
-        06
-      </a>
-    
-      <a class="item" data-tab="Exercises">
-        Exercises
-      </a>
-    
+    </style>
+  </head>
+
+  <body class="uk-background-muted">
+    <div class="wrapper">
+      <div class="content">
+        <div style="height:1000px;">
+          
+  
+
+  <div class="ui fixed top pointing inverted stackable menu labmenu">
+    <header class="header item">
+      <i id="toc" class="sitemap icon"></i>
+      
+        <a href="../index.html"> Javascript & Microservices  </a>
+      
+    </header>
+    <div class="right tab-menu menu">
+      
+        <a class="item" data-tab="Lab-11-B">
+          Lab-11-B
+        </a>
+      
+        <a class="item" data-tab="01">
+          01
+        </a>
+      
+        <a class="item" data-tab="02">
+          02
+        </a>
+      
+        <a class="item" data-tab="03">
+          03
+        </a>
+      
+        <a class="item" data-tab="04">
+          04
+        </a>
+      
+        <a class="item" data-tab="05">
+          05
+        </a>
+      
+        <a class="item" data-tab="06">
+          06
+        </a>
+      
+        <a class="item" data-tab="Exercises">
+          Exercises
+        </a>
+      
+    </div>
   </div>
-</div>
 
-<div class="ui pushable">
-  <div class="ui inverted labeled icon left inline vertical sidebar menu">
-    <br><br>
-    
+
+  
+
+  <div class="ui pushable">
+    <div class="ui inverted labeled icon left inline vertical sidebar menu">
+      <br><br>
       
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic01-context/book/index.html">Lab-01 </a>
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic01-context/book/index.html">Lab-01 </a>
+        
       
-    
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic02-template-method-strategy/book-template-method-strategy/index.html">Lab-02 </a>
+        
       
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic02-template-method-strategy/book-template-method-strategy/index.html">Lab-02 </a>
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic03-command/book-a-command/index.html">Lab-03 </a>
+        
       
-    
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic04-prototype/book-a-prototype/index.html">lab-04 </a>
+        
       
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic03-command/book-a-command/index.html">Lab-03 </a>
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic05-gof-patterns/book/index.html">Lab-05 </a>
+        
       
-    
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic06-adapter-singleton-memento/book/index.html">Lab-06 </a>
+        
       
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic04-prototype/book-a-prototype/index.html">lab-04 </a>
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic07-enterprise-patterns-1/book/index.html">Lab-07 </a>
+        
       
-    
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic08-architecture/book/index.html">Lab-08 </a>
+        
       
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic05-gof-patterns/book/index.html">Lab-05 </a>
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic09-enterprise-patterns-2/book/index.html">Lab-09 </a>
+        
       
-    
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic10-half-sync/book/index.html">Lab-10 </a>
+        
       
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic06-adapter-singleton-memento/book/index.html">Lab-06 </a>
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic11-microservices/book-a/index.html">Lab-11-A </a>
+        
       
-    
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic11-microservices/book-b/index.html">Lab-11-B </a>
+        
       
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic07-enterprise-patterns-1/book/index.html">Lab-07 </a>
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic12-xtend/book-a/index.html">Lab-12-A </a>
+        
       
-    
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic12-xtend/book-b/index.html">Lab-12-B </a>
+        
       
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic08-architecture/book/index.html">Lab-08 </a>
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic12-xtend/book-c/index.html">Lab-12-C </a>
+        
       
-    
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic13-swift/book/index.html">SwiftToDoLab </a>
+        
       
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic09-enterprise-patterns-2/book/index.html">Lab-09 </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic10-half-sync/book/index.html">Lab-10 </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic11-microservices/book-a/index.html">Lab-11-A </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic11-microservices/book-b/index.html">Lab-11-B </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic12-xtend/book-a/index.html">Lab-12-A </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic12-xtend/book-b/index.html">Lab-12-B </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic12-xtend/book-c/index.html">Lab-12-C </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic13-swift/book/index.html">SwiftToDoLab </a>
-      
-    
-  </div>
-  <div class="pusher" tabindex="-1">
-    <div class="ui basic segment">
-      <br>
-      
-        <div class="ui tab segment lab" data-tab="Lab-11-B">
-          <h1>Objectives</h1>
+    </div>
+    <div class="pusher" tabindex="-1">
+      <div class="ui basic segment">
+        <br>
+        
+          <div class="ui tab segment lab" data-tab="Lab-11-B">
+            <h1>Objectives</h1>
 <p>Build a User Interface for the pacemaker-node based on ember.js</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="01">
-          <h1>Assets &amp; Libraries</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="01">
+            <h1>Assets &amp; Libraries</h1>
 <p>Create a new folder in the pacemaker-node project called <code>public</code>. Create 2 subfolders:</p>
 <ul>
 <li>images</li>
@@ -272,10 +300,10 @@ h3 {
         ├── semantic.js
         └── semantic.min.js</code></pre>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="02">
-          <h1>Main Program</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="02">
+            <h1>Main Program</h1>
 <p>In <code>public</code>, create a new file called <code>pacemaker.html</code></p>
 <h2>pacemaker.html</h2>
 <pre><code>&lt;!DOCTYPE html&gt;
@@ -306,10 +334,10 @@ h3 {
 <p>and the source should look as expected:</p>
 <p><img src="img/02.png" alt=""></p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="03">
-          <h1>app.js</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="03">
+            <h1>app.js</h1>
 <p>Still in <code>public</code>, create a new folder called <code>app</code>, containing the following script:</p>
 <h2>app.js</h2>
 <pre><code class="lang-javascript">var apiUrl = &#39;/api&#39;  
@@ -419,10 +447,10 @@ App.Router.map(function()
 <p><img src="img/03.png" alt=""></p>
 <p>Note that we can set breakpoints, and even debug, the application.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="04">
-          <h1>Login</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="04">
+            <h1>Login</h1>
 <p>Introduce a <code>login</code> template into <code>pacemaker.html</code>:</p>
 <pre><code>    &lt;script type=&quot;text/x-handlebars&quot; data-template-name=&quot;login&quot;&gt;
       &lt;section class=&quot;ui  segment&quot;&gt;
@@ -521,10 +549,10 @@ function apiPost(api, object, doneCallback )
 <p>and inspect the returned user objects:</p>
 <p><img src="img/06.png" alt=""></p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="05">
-          <h1>Dashboard</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="05">
+            <h1>Dashboard</h1>
 <p>The dashboard, consisting of a list of activities + a simple form to upload them, can be composed using 1 template + 2 partials:</p>
 <pre><code>    &lt;script type=&quot;text/x-handlebars&quot; data-template-name=&quot;dashboard&quot;&gt;
       &lt;section class=&quot;ui segment&quot;&gt;
@@ -649,10 +677,10 @@ function apiPost(api, object, doneCallback )
 <p><img src="img/07.png" alt=""></p>
 <p>You should be able to upload and delete activities.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="06">
-          <h1>Structure</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="06">
+            <h1>Structure</h1>
 <p>This is the structure of the <code>pacemaker-node</code> at this stage:</p>
 <pre><code>├── app.js
 ├── controllers
@@ -694,10 +722,10 @@ function apiPost(api, object, doneCallback )
         ├── images ...
         └── javascript ...</code></pre>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="Exercises">
-          <h1>Exercises</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="Exercises">
+            <h1>Exercises</h1>
 <p>A an archive of the application including the ember UI:</p>
 <ul>
 <li><a href="archives/pacemaker-node-final.zip">pacemaker-node</a></li>
@@ -705,14 +733,16 @@ function apiPost(api, object, doneCallback )
 <h1>Exercise 1:</h1>
 <h1>Exercise 2:</h1>
 
-        </div>
-      
+          </div>
+        
+      </div>
     </div>
   </div>
-</div>
 
-<script>
-  $(document).on('keydown', function(e) {
+
+
+  <script>
+    $(document).on('keydown', function(e) {
   e = e || window.event;
   var nextTab;
   switch (e.which || e.keyCode) {
@@ -732,7 +762,7 @@ function apiPost(api, object, doneCallback )
   }
 });
 
-  $(document).ready(function() {
+    $(document).ready(function() {
   $('img').addClass('ui image');
 
   $('.ui.embed').embed();
@@ -765,6 +795,16 @@ function apiPost(api, object, doneCallback )
     .sidebar('attach events', '#toc');
 });
 
-</script>
-</body>
+  </script>
+
+
+        </div>
+      </div>
+      <div class="footer"> <p> Powered by <a
+          href="https://github.com/edeleastar/tutors-ts">tutors-ts.</a>
+        Unless otherwise stated, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. </p>
+      </div>
+    </div>
+  </body>
+
 </html>

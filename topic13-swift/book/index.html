@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
-        type="text/css">
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
-        rel="stylesheet"/>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-  <style>
-    
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
+          type="text/css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
+          rel="stylesheet"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+      
 
 body {
   font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
@@ -66,162 +66,190 @@ h3 {
 
 
 
-  </style>
-</head>
+      
 
-<body>
+html, body {
+  height: 100%;
+  margin: 0;
+}
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.footer {
+  background: white;
+  text-align: right;
+}
+.content {
+  flex: 1;
+  overflow: auto;
+}
 
 
 
-<div class="ui fixed top pointing inverted stackable menu labmenu">
-  <header class="header item">
-    <i id="toc" class="sitemap icon"></i>
-    
-      <a href="../index.html"> Perspectives on Swift  </a>
-    
-  </header>
-  <div class="right tab-menu menu">
-    
-      <a class="item" data-tab="SwiftToDoLab">
-        SwiftToDoLab
-      </a>
-    
-      <a class="item" data-tab="01">
-        01
-      </a>
-    
-      <a class="item" data-tab="02">
-        02
-      </a>
-    
-      <a class="item" data-tab="03">
-        03
-      </a>
-    
-      <a class="item" data-tab="04">
-        04
-      </a>
-    
-      <a class="item" data-tab="05">
-        05
-      </a>
-    
-      <a class="item" data-tab="06">
-        06
-      </a>
-    
-      <a class="item" data-tab="07">
-        07
-      </a>
-    
-      <a class="item" data-tab="08">
-        08
-      </a>
-    
-      <a class="item" data-tab="09">
-        09
-      </a>
-    
+    </style>
+  </head>
+
+  <body class="uk-background-muted">
+    <div class="wrapper">
+      <div class="content">
+        <div style="height:1000px;">
+          
+  
+
+  <div class="ui fixed top pointing inverted stackable menu labmenu">
+    <header class="header item">
+      <i id="toc" class="sitemap icon"></i>
+      
+        <a href="../index.html"> Perspectives on Swift  </a>
+      
+    </header>
+    <div class="right tab-menu menu">
+      
+        <a class="item" data-tab="SwiftToDoLab">
+          SwiftToDoLab
+        </a>
+      
+        <a class="item" data-tab="01">
+          01
+        </a>
+      
+        <a class="item" data-tab="02">
+          02
+        </a>
+      
+        <a class="item" data-tab="03">
+          03
+        </a>
+      
+        <a class="item" data-tab="04">
+          04
+        </a>
+      
+        <a class="item" data-tab="05">
+          05
+        </a>
+      
+        <a class="item" data-tab="06">
+          06
+        </a>
+      
+        <a class="item" data-tab="07">
+          07
+        </a>
+      
+        <a class="item" data-tab="08">
+          08
+        </a>
+      
+        <a class="item" data-tab="09">
+          09
+        </a>
+      
+    </div>
   </div>
-</div>
 
-<div class="ui pushable">
-  <div class="ui inverted labeled icon left inline vertical sidebar menu">
-    <br><br>
-    
+
+  
+
+  <div class="ui pushable">
+    <div class="ui inverted labeled icon left inline vertical sidebar menu">
+      <br><br>
       
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic01-context/book/index.html">Lab-01 </a>
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic01-context/book/index.html">Lab-01 </a>
+        
       
-    
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic02-template-method-strategy/book-template-method-strategy/index.html">Lab-02 </a>
+        
       
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic02-template-method-strategy/book-template-method-strategy/index.html">Lab-02 </a>
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic03-command/book-a-command/index.html">Lab-03 </a>
+        
       
-    
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic04-prototype/book-a-prototype/index.html">lab-04 </a>
+        
       
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic03-command/book-a-command/index.html">Lab-03 </a>
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic05-gof-patterns/book/index.html">Lab-05 </a>
+        
       
-    
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic06-adapter-singleton-memento/book/index.html">Lab-06 </a>
+        
       
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic04-prototype/book-a-prototype/index.html">lab-04 </a>
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic07-enterprise-patterns-1/book/index.html">Lab-07 </a>
+        
       
-    
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic08-architecture/book/index.html">Lab-08 </a>
+        
       
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic05-gof-patterns/book/index.html">Lab-05 </a>
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic09-enterprise-patterns-2/book/index.html">Lab-09 </a>
+        
       
-    
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic10-half-sync/book/index.html">Lab-10 </a>
+        
       
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic06-adapter-singleton-memento/book/index.html">Lab-06 </a>
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic11-microservices/book-a/index.html">Lab-11-A </a>
+        
       
-    
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic11-microservices/book-b/index.html">Lab-11-B </a>
+        
       
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic07-enterprise-patterns-1/book/index.html">Lab-07 </a>
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic12-xtend/book-a/index.html">Lab-12-A </a>
+        
       
-    
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic12-xtend/book-b/index.html">Lab-12-B </a>
+        
       
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic08-architecture/book/index.html">Lab-08 </a>
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic12-xtend/book-c/index.html">Lab-12-C </a>
+        
       
-    
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns//topic13-swift/book/index.html">SwiftToDoLab </a>
+        
       
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic09-enterprise-patterns-2/book/index.html">Lab-09 </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic10-half-sync/book/index.html">Lab-10 </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic11-microservices/book-a/index.html">Lab-11-A </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic11-microservices/book-b/index.html">Lab-11-B </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic12-xtend/book-a/index.html">Lab-12-A </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic12-xtend/book-b/index.html">Lab-12-B </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic12-xtend/book-c/index.html">Lab-12-C </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/design-patterns//topic13-swift/book/index.html">SwiftToDoLab </a>
-      
-    
-  </div>
-  <div class="pusher" tabindex="-1">
-    <div class="ui basic segment">
-      <br>
-      
-        <div class="ui tab segment lab" data-tab="SwiftToDoLab">
-          <h1>Objectives</h1>
+    </div>
+    <div class="pusher" tabindex="-1">
+      <div class="ui basic segment">
+        <br>
+        
+          <div class="ui tab segment lab" data-tab="SwiftToDoLab">
+            <h1>Objectives</h1>
 <p>Rebuild the ToDo application from the apple developer documentation in Swift</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="01">
-          <h1>Setup</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="01">
+            <h1>Setup</h1>
 <p>In XCode, create a new IOS &#39;Single View&#39; Swift application:</p>
 <p><img src="img/01.png" alt=""></p>
 <p>Make sure the app is a Swift application:</p>
@@ -303,10 +331,10 @@ class ViewController: UIViewController
 <p>and disable the use of Auto Layout and size classes. The storyboard scene will be reconfigured to look like this:</p>
 <p><img src="img/04.png" alt=""></p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="02">
-          <h1>Outlets &amp; Delegates</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="02">
+            <h1>Outlets &amp; Delegates</h1>
 <p>Drag a TextField onto the ViewController scene:</p>
 <p><img src="img/06.png" alt=""></p>
 <p>Positioning it as shown.</p>
@@ -380,10 +408,10 @@ class ViewController: UIViewController, UITextFieldDelegate
   }
 }</code></pre>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="03">
-          <h1>TableView</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="03">
+            <h1>TableView</h1>
 <p>In the storyboard, introduce a TableViewController, and position it alongside the existing view in the scene as shown:</p>
 <p><img src="img/12.png" alt=""></p>
 <p>Drag and drop the &#39;initial scene&#39; arrow from the existing controller to the front of the new controller:</p>
@@ -391,10 +419,10 @@ class ViewController: UIViewController, UITextFieldDelegate
 <p>(Note the &#39;This is the View Controller&#39; will be automatically ticked in the Attributes Inspector on the right)</p>
 <p>Run the app again - a different (table) view appears instead.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="04">
-          <h1>Connecting Views</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="04">
+            <h1>Connecting Views</h1>
 <p>Select the Table View Controller in the storyboard editor, and select &#39;Editor-&gt;Embed in-&gt;Navigation Controller. This will reconfigure the layout as follows:</p>
 <p><img src="img/14.png" alt=""></p>
 <p>It has created space at the top of the TableView, into which we can now drag and drop a button:</p>
@@ -415,10 +443,10 @@ class ViewController: UIViewController, UITextFieldDelegate
 <p><img src="img/20.png" alt=""></p>
 <p>Now try running the app again. Note the changed title in the Item view - from &#39;Back&quot; to &#39;To Do List&#39;</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="05">
-          <h1>Custom Classes</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="05">
+            <h1>Custom Classes</h1>
 <p>The TableViewController we introduced in the storyboard is currently entirely visual, and without any Swift class associated with it. We can create a class now and establish the connection with the visual representation.</p>
 <p>Select the folder containing our classes in the project view, right click and select &#39;New File&#39; then select &#39;Cocoa Touch&#39; class:</p>
 <p><img src="img/25.png" alt=""></p>
@@ -479,10 +507,10 @@ class ToDoListController: UITableViewController
 <p>Finally, run it again and look to the the message appearing in xcode:</p>
 <p><img src="img/29.png" alt=""></p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="06">
-          <h1>Done / Cancel Buttons</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="06">
+            <h1>Done / Cancel Buttons</h1>
 <p>Just as we encapsulated the TableView controller in a Navigation Controller earlier - we will now also embed the View controller.</p>
 <p>First select the View Controller:</p>
 <p><img src="img/30.png" alt=""></p>
@@ -532,10 +560,10 @@ class ToDoListController: UITableViewController
 <p>(Comment out the objc attribute above).</p>
 <p>It should work now (hopefully). I.e. &#39;Done&#39; and &#39;Cancel&#39; should return to the list view, and the log message should appear in the console.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="07">
-          <h1>ToDoItem Class</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="07">
+            <h1>ToDoItem Class</h1>
 <p>Introduce the following class:</p>
 <h2>ToDoItem</h2>
 <pre><code>class ToDoItem
@@ -597,10 +625,10 @@ class ViewController: UIViewController, UITextFieldDelegate
   }
 }</code></pre>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="08">
-          <h1>ToDoListTableView Class</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="08">
+            <h1>ToDoListTableView Class</h1>
 <p>Our final step is to display the item in the TableView. </p>
 <p>First introduce an array of ToDoItems in the tableview controller:</p>
 <pre><code>  var todoItems = ToDoItem[]()</code></pre>
@@ -734,10 +762,10 @@ class ToDoListController: UITableViewController
   }
 }</code></pre>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="09">
-          <h2>Edit Cells</h2>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="09">
+            <h2>Edit Cells</h2>
 <p>Finally, we would like the enable checking / unchecking + redordring and deleting of the todo items in the list.</p>
 <p>First to support tick/tick items, introduce this override:</p>
 <pre><code>  override func tableView(tableView: UITableView!, didSelectRowAtIndexPath : NSIndexPath!)
@@ -792,14 +820,16 @@ class ToDoListController: UITableViewController
     println (&quot;Tableview Loaded&quot;)
   }</code></pre>
 
-        </div>
-      
+          </div>
+        
+      </div>
     </div>
   </div>
-</div>
 
-<script>
-  $(document).on('keydown', function(e) {
+
+
+  <script>
+    $(document).on('keydown', function(e) {
   e = e || window.event;
   var nextTab;
   switch (e.which || e.keyCode) {
@@ -819,7 +849,7 @@ class ToDoListController: UITableViewController
   }
 });
 
-  $(document).ready(function() {
+    $(document).ready(function() {
   $('img').addClass('ui image');
 
   $('.ui.embed').embed();
@@ -852,6 +882,16 @@ class ToDoListController: UITableViewController
     .sidebar('attach events', '#toc');
 });
 
-</script>
-</body>
+  </script>
+
+
+        </div>
+      </div>
+      <div class="footer"> <p> Powered by <a
+          href="https://github.com/edeleastar/tutors-ts">tutors-ts.</a>
+        Unless otherwise stated, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. </p>
+      </div>
+    </div>
+  </body>
+
 </html>
